@@ -3,6 +3,7 @@ package com.gabrielvicente.loans.controller;
 import com.gabrielvicente.loans.dto.CustomerLoanRequest;
 import com.gabrielvicente.loans.dto.CustomerLoanResponse;
 import com.gabrielvicente.loans.service.LoanService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ public class LoanController {
     }
 
     @PostMapping(value = "/customer-loans")
-    public ResponseEntity<CustomerLoanResponse> checkPossibleLoans(@RequestBody CustomerLoanRequest customerLoanRequest) {
+    public ResponseEntity<CustomerLoanResponse> checkPossibleLoans(@RequestBody @Valid CustomerLoanRequest customerLoanRequest) {
         CustomerLoanResponse customerLoanResponse = loanService.checkPossibleLoans(customerLoanRequest);
         return ResponseEntity.ok(customerLoanResponse);
     }
