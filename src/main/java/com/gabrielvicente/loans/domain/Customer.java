@@ -30,4 +30,8 @@ public class Customer {
     public boolean isFromLocation(String location) {
         return this.location.equalsIgnoreCase(location);
     }
+
+    public boolean isIncomeHigherThan(int income) {
+        return this.income >= income;
+    }
 }
