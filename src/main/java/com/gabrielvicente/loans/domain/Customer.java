@@ -15,7 +15,7 @@ public class Customer {
         this.location = location;
     }
 
-    public boolean isIncomeEqualOrLowerThan(double value) {
+    public boolean isIncomeEqualsOrLowerThan(double value) {
         return income <= value;
     }
 
@@ -31,7 +31,7 @@ public class Customer {
         return this.location.equalsIgnoreCase(location);
     }
 
-    public boolean isIncomeHigherThan(int income) {
-        return this.income >= income;
+    public boolean isIncomeEqualsOrGreaterThan(int value) {
+        return income >= value;
     }
 }
